@@ -16,6 +16,11 @@ const { getClassSchedules, postClassSchedule } = require('./controllers/schedule
 const { getGrades, postGrade } = require('./controllers/gradecontroller');
 const { getForums, postForum } = require('./controllers/forumcontroller');
 
+const { register, login } = require('./controllers/authcontroller');
+
+app.post('/register', register);
+app.post('/login', login);
+
 app.get('/schedules', authenticateToken, getClassSchedules);
 app.post('/schedules', authenticateToken, postClassSchedule);
 
